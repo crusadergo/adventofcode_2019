@@ -8,9 +8,8 @@ pub fn aoc_01_p1() {
 
     for line in reader.lines() {
         let module_mass: i32 = line.unwrap().parse().unwrap();
-        let mut div = divide_mass(module_mass);
 
-        sum = sum + div;
+        sum = sum + divide_mass(module_mass);
     }
 
     println!("AOC_01_part_1: {}", sum);
