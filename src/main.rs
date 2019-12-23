@@ -52,3 +52,13 @@ fn aoc_01() {
 fn main() {
     aoc_01();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn divide_by_three_and_minus_two() {
+        assert_eq!(divide_mass(1969), 654);
+    }
+}
