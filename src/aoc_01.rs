@@ -1,9 +1,9 @@
-use std::fs::File;
-use std::io::{prelude::*, BufReader};
+use crate::file;
+use std::io::prelude::*;
 
 pub fn aoc_01_p1() {
-    let file_path = "input/01";
-    let reader = get_result(file_path);
+    let path = "input/01";
+    let reader = file::reader(path);
     let mut sum = 0;
 
     for line in reader.lines() {
@@ -16,8 +16,8 @@ pub fn aoc_01_p1() {
 }
 
 pub fn aoc_01_p2() {
-    let file_path = "input/01";
-    let reader = get_result(file_path);
+    let path = "input/01";
+    let reader = file::reader(path);
     let mut sum = 0;
 
     for line in reader.lines() {
@@ -37,11 +37,6 @@ pub fn aoc_01_p2() {
         }
     }
     println!("AOC_01_part_2: {}", sum);
-}
-
-fn get_result(file_path: &str) -> BufReader<File> {
-    let file = File::open(file_path).unwrap();
-    BufReader::new(file)
 }
 
 fn divide_mass(mass: i32) -> i32 {
