@@ -8,6 +8,7 @@ fn main() {
     aoc_01::aoc_01_p1();
     aoc_01::aoc_01_p2();
     println!("{}", separator);
-    aoc_02::compute();
+    aoc_02::aoc_02_p1();
+    aoc_02::aoc_02_p2();
     println!("{}", separator);
 }
