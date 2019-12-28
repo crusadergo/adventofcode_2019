@@ -1,6 +1,7 @@
 mod aoc_01;
 mod aoc_02;
 mod file;
+mod computer;
 
 fn main() {
     let separator = "=========================================================================";

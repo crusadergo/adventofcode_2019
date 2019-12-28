@@ -1,4 +1,5 @@
 use crate::file;
+use crate::computer;
 use std::io::prelude::*;
 
 pub fn aoc_02_p1() {
@@ -17,7 +18,7 @@ pub fn aoc_02_p1() {
     vec[1] = 12;
     vec[2] = 2;
 
-    calculate_instruction(&mut vec);
+    computer::calculate_instruction(&mut vec);
 
     println!("AOC_02_part_1: {:?}", vec[0]);
 }
@@ -43,7 +44,7 @@ pub fn aoc_02_p2() {
 
             let mut instructions = vec.clone();
 
-            calculate_instruction(&mut instructions);
+            computer::calculate_instruction(&mut instructions);
 
             if instructions[0] == goal {
                 let result = 100 * noun + verb;
@@ -51,26 +52,6 @@ pub fn aoc_02_p2() {
                 println!("AOC_02_part_2: {:?}", result);
             }
 
-        }
-    }
-}
-
-fn calculate_instruction(vec: &mut Vec<isize>) {
-    let mut pos: usize = 0;
-
-    while vec[pos] != 99 {
-        if vec[pos] == 1 {
-            let write_to = vec[pos + 3] as usize;
-            vec[write_to] = vec[vec[pos + 1] as usize] + vec[vec[pos + 2] as usize];
-    
-            pos = pos + 4;
-        } else if vec[pos] == 2 {
-            let write_to = vec[pos + 3] as usize;
-            vec[write_to] = vec[vec[pos + 1] as usize] * vec[vec[pos + 2] as usize];
-
-            pos = pos + 4;
-        } else {
-            println!("ERROR!!!");
         }
     }
 }
